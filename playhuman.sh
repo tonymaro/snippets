@@ -1,5 +1,11 @@
 #!/bin/bash
 # Play doorbell human detected video
+# 
+# NOTE:  This is running on Linux with Xfce.  I've disabled the window stack management in Xfce with the settings option
+#        so that I could manually manage the window display in code
+#
+##########################################
+
 export DISPLAY=:0
 
 killall mpv
