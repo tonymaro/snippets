@@ -3,6 +3,8 @@
 # 
 # NOTE:  This is running on Linux with Xfce.  I've disabled the window stack management in Xfce with the settings option
 #        so that I could manually manage the window display in code
+#        ffplay is awful about taking time before generating it's window, so there's a bit of gymnastics to manage the 
+#        stack of windows without getting flicker. 
 #
 ##########################################
 
@@ -63,7 +65,7 @@ wait $FIRST_PID
 # Make sure the camera stream pops to top
 xdotool windowactivate `xdotool search --pid $STREAM_PID | tail -1`
 sleep 3
-# Show firefox again
+# Show firefox again, but now it's under the video stream
 wmctrl -r Firefox -b remove,hidden
 # Let camera show for 20 seconds
 sleep 20
